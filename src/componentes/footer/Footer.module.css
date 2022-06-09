@@ -1,0 +1,23 @@
+.container{
+  width: 1000px;
+  position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 10rem;
+}
+.img{
+  height: 1.5rem;
+}
+.title{
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 1rem;
+}
+.img:hover{
+  cursor: pointer;
+  filter: brightness(0.5);
+  transition: all 0.3s ease-in-out;
+}

@@ -1,0 +1,14 @@
+@import url(../../global.css);
+.container{
+  display: flex;
+  width: 1000px;
+  justify-content: center;
+  margin:0 auto;
+}
+.title{
+  color: var(--primary);
+  font-size: 3rem;
+  text-decoration: none;
+  margin-top: 1rem;
+  font-weight: bold;
+}
