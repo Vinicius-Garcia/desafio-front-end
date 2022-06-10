@@ -2,6 +2,7 @@
   --grey-400:#3f3f3f;
   --grey-700: #2f2f2f;
   --primary: #00d0b3;
+  --card: #d00054;
 
 }
 
@@ -15,4 +16,7 @@
 
 body{
   background-color:#2f2f2f;
+}
+input{
+  color: #000;
 }

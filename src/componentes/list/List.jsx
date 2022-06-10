@@ -1,49 +1,23 @@
 import styles from './List.module.css'
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Card } from '../card/Card';
 
-export function List(){
-  return(
+export function List() {
+  let itens = JSON.parse(localStorage.getItem('itens'));
+  return (
     <div className={styles.container}>
+      <h1 className={styles.subititle}>Lista de Produtos</h1>
       <div className={styles.title}>
-      <h3 className={styles.subititle}>Lista de Produtos</h3>
-        <div className={styles.card}>
-            <h3>iPhone</h3>
-            <h3>Eletrônico</h3>
-            <h3>237</h3>
-            <h3>Apple</h3>
-            <h3>R$14.000,00</h3>
-
-        </div>
-        <div className={styles.card}>
-            <h3>iPhone</h3>
-            <h3>Eletrônico</h3>
-            <h3>237</h3>
-            <h3>Apple</h3>
-            <h3>R$14.000,00</h3>
-
-        </div>
-        <div className={styles.card}>
-            <h3>iPhone</h3>
-            <h3>Eletrônico</h3>
-            <h3>237</h3>
-            <h3>Apple</h3>
-            <h3>R$14.000,00</h3>
-
-        </div>
-        <div className={styles.card}>
-            <h3>iPhone</h3>
-            <h3>Eletrônico</h3>
-            <h3>237</h3>
-            <h3>Apple</h3>
-            <h3>R$14.000,00</h3>
-
-        </div>
-
+        {itens != null
+          ? itens.map((itens, index) => {
+            return <Card product={itens} key={index} />;
+          })
+          : 'Nenhum produto cadastrado'}
       </div>
       <div className={styles.form}>
         <Link to="/" className={styles.button}>Adicionar Novo Item</Link>
-        </div>
+      </div>
     </div>
-   
+
   )
 }

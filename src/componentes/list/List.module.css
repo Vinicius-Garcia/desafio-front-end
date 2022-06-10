@@ -5,16 +5,12 @@
     margin-right: auto;
     text-align: center;
 }
-.card{
-  display: flex;
-  gap: 1rem;
-  padding: 1rem;
-  margin-top: 2rem;
-  border: 3px solid black;
-}
+
 .title{
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
   align-items: center;
   text-align: center;
   padding-top:2rem;
@@ -32,10 +28,14 @@
   text-decoration: none;
 }
 .form{
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 .button:hover{
   cursor: pointer;
   filter: brightness(0.5);
   transition: all 0.3s ease-in-out;
+}
+
+.input:not(:focus):not(:placeholder-shown):invalid {
+  border-color: red;
 }
