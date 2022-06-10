@@ -1,4 +1,5 @@
 import styles from './List.module.css'
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card } from '../card/Card';
 
@@ -10,13 +11,14 @@ export function List() {
       <div className={styles.title}>
         {itens != null
           ? itens.map((itens, index) => {
-            return <Card product={itens} key={index} />;
+            return <Card product={itens} chave={index}  key={index} />;
           })
           : 'Nenhum produto cadastrado'}
       </div>
       <div className={styles.form}>
         <Link to="/" className={styles.button}>Adicionar Novo Item</Link>
       </div>
+      <Card/>
     </div>
 
   )

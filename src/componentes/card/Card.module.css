@@ -21,7 +21,6 @@ margin-top: 10px;
  
  
  .cardinfo {
-  padding-top: 10%;
   padding-bottom: 1rem;
  }
  
@@ -47,5 +46,19 @@ margin-top: 10px;
  .textbody {
   font-size: .9em;
   padding-bottom: 10px;
+ }
+ .button{
+  background-color: transparent;
+  border: none;
+  margin-right: 0px;
+  cursor: pointer;
+ }
+ .button:hover{
+  filter: brightness(0.5);
+ }
+ .cardHeader{
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
  }
  
