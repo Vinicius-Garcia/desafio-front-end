@@ -3,7 +3,7 @@
 ## :memo: Descrição
 Este desafio faz parte do processo seletivo para o cargo de Desenvolvedor Front-End no James Tip. Este tem por objetivo medir seu nível de conhecimento com tecnologias de desenvolvimento front-end, e suas capacidades de propor novas ideias e arquiteturas para nossos serviços, sempre com o foco de manter o ambiente simples, seguro, funcional e objetivo.
 ## 👺 Você pode ver o projeto funcionando em:
-* https://desafio-james-tip.herokuapp.com/list
+* https://desafio-james-tip.herokuapp.com/
 ## :books: Funcionalidades
 * <b>Criar Produto</b>: Adiciona um produto ao localStorage
 *  <b>Listar Produtos</b>: Lista os produtos cadastrados no localStorage
