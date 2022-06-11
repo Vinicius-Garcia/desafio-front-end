@@ -45,7 +45,7 @@ export function Editar() {
   console.log(codigo);
   return (
     <div className={styles.container}>
-      <h1 className={styles.subititle}>Cadastro de Produtos:</h1>
+      <h1 className={styles.subititle}>Editar Produto:</h1>
       <div className={styles.title}>
         <input
           className={styles.input}
