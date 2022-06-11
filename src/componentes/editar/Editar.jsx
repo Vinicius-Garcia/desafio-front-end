@@ -1,16 +1,25 @@
-import styles from "./Product.module.css";
-import {  useState } from "react";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import styles from "./Editar.module.css";
 import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 
-export function Product() {
-  const [produto, setProduto] = useState("");
-  const [codigo, setCodigo] = useState("");
-  const [categoria, setCategoria] = useState("");
-  const [fornecedor, setFornecedor] = useState("");
-  const [valor, setValor] = useState("");
-  const adicionar = (e) => {
+export function Editar() {
+  const { id } = useParams();
+  const itens = JSON.parse(localStorage.getItem("itens"));
+  const indexDoProduto = itens.findIndex((item) => item.codigo == id);
+
+  const objetoProduto = itens[indexDoProduto];
+
+  const [produto, setProduto] = useState(objetoProduto.produto);
+  const [codigo, setCodigo] = useState(objetoProduto.codigo);
+  const [categoria, setCategoria] = useState(objetoProduto.categoria);
+  const [fornecedor, setFornecedor] = useState(objetoProduto.fornecedor);
+  const [valor, setValor] = useState(objetoProduto.valor);
+
+  const atualizar = (e) => {
+    e.preventDefault();
     if (
       produto === "" ||
       codigo === "" ||
@@ -20,34 +29,25 @@ export function Product() {
     ) {
       return toast.error("Campos Incompletos!");
     }
-
-    let itensArray = localStorage.getItem("itens"); // Get Previous Comments
-    let temp = [];
-
-    if (itensArray !== null) {
-      temp = [...JSON.parse(itensArray)];
-    }
-
-    temp.push({
-      produto: produto,
-      codigo: codigo,
-      categoria: categoria,
-      fornecedor: fornecedor,
-      valor: valor,
-    });
-    localStorage.setItem("itens", JSON.stringify(temp));
-    setProduto("");
-    setCodigo("");
-    setCategoria("");
-    setFornecedor("");
-    setValor("");
-    toast.success("Cadastro Efetuado com Sucesso!");
+    itens[indexDoProduto] = {
+      produto,
+      codigo,
+      categoria,
+      fornecedor,
+      valor,
+    };
+    localStorage.setItem("itens", JSON.stringify(itens));
+    toast.success("Atualizado com Sucesso!");
   };
+  if (codigo == null) {
+    return;
+  }
+  console.log(codigo);
   return (
     <div className={styles.container}>
       <h1 className={styles.subititle}>Cadastro de Produtos:</h1>
       <div className={styles.title}>
-      <input
+        <input
           className={styles.input}
           type="text"
           value={produto}
@@ -69,7 +69,7 @@ export function Product() {
           placeholder="Código do Produto"
           required
         />
-        
+
         <input
           className={styles.input}
           type="text"
@@ -87,9 +87,14 @@ export function Product() {
       </div>
       <div className={styles.form}>
         <ToastContainer toastStyle={{ backgroundColor: "black" }} />
-        <button className={styles.button} type="submit" onClick={adicionar}>
-          Cadastrar
-        </button>
+        <Link
+          to="/list"
+          className={styles.button}
+          type="submit"
+          onClick={atualizar}
+        >
+          Atualizar
+        </Link>
         <Link to="/list" className={styles.button}>
           Listar
         </Link>

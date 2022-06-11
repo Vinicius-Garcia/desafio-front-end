@@ -1,14 +1,11 @@
 import styles from "./Card.module.css";
 import { FaTrashAlt, FaPen } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import {createContext} from "react";
-const Name = createContext();
+import { useState, useEffect } from "react";
 
 export function Card(valor) {
-  const data = valor.product;
-  console.log(valor.chave)
-  if(data == null){return }
-  
+  var data = valor.product
+  if (data == null) { return }
   const formatarPreco = new Intl.NumberFormat("pt-BR", {
     style: "currency",
     currency: "BRL",
@@ -19,17 +16,13 @@ export function Card(valor) {
         (produtos) => produtos.codigo !== data.codigo
       );
     localStorage.setItem("itens", JSON.stringify(produtos));
-    console.log(produtos);
-    window.location.reload(false);
   };
-  const update = (e) => {
-    console.log(data);
-  }
+
   return (
 
     <div className={styles.card}>
       <div className={styles.cardHeader}>
-        <Link to="/" product={data} className={styles.button} onClick={update}>
+        <Link to={`/editar/` +data.codigo} product={data} className={styles.button}>
           <FaPen />
         </Link>
         <button onClick={deletar} className={styles.button}>
@@ -57,4 +50,3 @@ export function Card(valor) {
     </div>
   );
 }
-export {Name};
