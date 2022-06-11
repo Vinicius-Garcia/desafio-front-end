@@ -5,6 +5,7 @@ import { Header } from "./componentes/header/Header";
 import { List } from "./componentes/list/List";
 import { Product } from "./componentes/product/Product";
 import { Footer } from "./componentes/footer/Footer";
+import { Editar } from "./componentes/editar/Editar";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Product />} />
         <Route path="/list" element={<List />} />
+        <Route path="/editar/:id" element={<Editar />} />
       </Routes>
       <Footer />
     </Router>
