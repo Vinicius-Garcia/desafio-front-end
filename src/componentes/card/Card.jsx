@@ -16,6 +16,7 @@ export function Card(valor) {
         (produtos) => produtos.codigo !== data.codigo
       );
     localStorage.setItem("itens", JSON.stringify(produtos));
+    window.location.assign('/list');
   };
 
   return (
