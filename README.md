@@ -4,6 +4,8 @@
 Este desafio faz parte do processo seletivo para o cargo de Desenvolvedor Front-End no James Tip. Este tem por objetivo medir seu nível de conhecimento com tecnologias de desenvolvimento front-end, e suas capacidades de propor novas ideias e arquiteturas para nossos serviços, sempre com o foco de manter o ambiente simples, seguro, funcional e objetivo.
 ## 👺 Você pode ver o projeto funcionando em:
 * https://desafio-james-tip.herokuapp.com/
+* Aqui está o design criado por mim no figma para execução do desafio: https://www.figma.com/file/DN9WsyHzF2Rvl4MgkBhN0v/desafio-james-tips?node-id=0%3A1
+
 ## :books: Funcionalidades
 * <b>Criar Produto</b>: Adiciona um produto ao localStorage
 *  <b>Listar Produtos</b>: Lista os produtos cadastrados no localStorage
@@ -25,7 +27,6 @@ npm run dev
 ```
 
 ## :soon: Implementação futura
-* O que será implementado na próxima sprint?
 * - Adicionar TypeScript
 * - Adicionar Styled-Components
 * - Adicionar Context-Api
